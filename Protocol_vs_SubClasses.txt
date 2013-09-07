@@ -1,0 +1,76 @@
+ 						SUBCLASS
+                                             				 ------------
+
+Every object descends from the 'NSObject' foundation class.The NSObject class identifies properties and methods which 
+apply to all objects. The NSObject class is divided into smaller groups of objects, called subclasses. Objects in these
+subclasses not only conform to the protocol of NSObject, they are also defined more precisely by the methods that govern
+their subclass. Every object class inherits from the superclasses above it in the object hierarchy, and also declares 
+the methods which make it a unique class.
+
+A subclass is a class definition that inherits the definition of a superclass. All of the methods that are defined in 
+the superclass are automatically defined in the subclass. 
+
+Example:-
+
+@interface parentClass : NSObject
+{
+}
+@end
+@interface subClass : parentClass
+{
+}
+@end
+
+Here,subClass inherits from parentClass.					
+
+
+					 PROTOCOL 
+                                              			 -----------
+
+A protocol is used to declare methods and properties that are independent of any specific class. Protocols can include 
+declarations for both instance methods and class methods, as well as properties. Protocols are what is called as the 
+interface in Java. A protocol is basically a list of methods which is shared among classes. The methods in the protocols
+do not have a body, they are meant to be implemented by the developer implementing the protocol for his/her class.
+
+When a class adopts a protocol, it promises to implement all of the methods declared in the protocol header. This means
+that any other classes which use that class can be certain that those methods will be implemented, without needing to 
+know anyting else about the class. This can be useful when creating a family of similar classes that all need to 
+communicate with a common "controller" class. The communication between the controller class and the controlled classes 
+can all be packaged into a single protocol. 
+
+The objective-c language does not support multiple inheritance, but much of the same functionality can be provided by 
+protocols because a class can conform to several different protocols. Protocols themselves can be extended to produce 
+new protocols consisting of a superset of the methods in the original protocol.
+
+Syntax to declare a protocol ->
+-------------------------------
+@protocol ProjectRules
+
+-(void)Project_Delivery;
+-(void)Project_Analysis_and_Design
+@end
+
+In the above code the name of the protocol is ProjectRules and there are no curly brackets because variables go inside
+the curly brackets and protocols have no variables associated with them. @protocol directive is used to declare a 
+protocol followed by the protocol name and in between the protocol name and @end directive, we declare all the methods
+for the protocol that we are declaring and later we can give body to those methods inside the class in which we will be
+implementing this protocol.
+
+Syntax to implement a protocol ->
+---------------------------------
+@interface ProjectManager: NSObject <ProjectRules>
+{
+}
+@end
+
+In the above code,we can see that the ProjectRules protocol has been implemented for the ProjectManager class. We use
+pointy brackets to implement a protocol for a particular class in objective C and in case we are implementing more than
+one protocol then just use a comma to separate the name of the protocol just like how its done in Java.
+
+@interface ProjectManager: NSObject <ProjectRules, ClientHandling>
+{
+}
+@end
+In the above code, the ProjectManager class implements two protocols, ProjectRules and ClientHandling.
+
+                                               
