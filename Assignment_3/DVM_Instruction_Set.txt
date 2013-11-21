@@ -1,9 +1,9 @@
-NAME OF INSTRUCTION	OPCODE-NAME/SYNTAX	DESCRIPTION		EXAMPLE
--------------------------------	----------------------		---------------------      		-----------------------------
+NAME OF INSTRUCTION	OPCODE-NAME/SYNTAX	DESCRIPTION			EXAMPLE
+------------------	----------------------	---------------------   	-----------------------------
 
-Move Instruction		move vx,vy		Moves the content of vy	move v0,v1
-						into vx. Both registers must	Move v1 into v0.
-						be in the 1st 256 register
+Move Instruction		move vx,vy	Moves the content of vy		move v0,v1
+						into vx. Both registers 	Move v1 into v0.
+						must be in the 1st 256 register
 						range.	
 
 			move-object vx,vy		Moves the object reference 	move-object v1,v8
